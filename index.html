@@ -1,24 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gacha Game</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top Up System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f2f2f2;
+      margin: 0;
+    }
+    .topup-container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input[type="number"],
+    input[type="text"],
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #4CAF50;
+      color: #ffffff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Gacha Game</h1>
-        <div id="game-info">
-            <p id="money">Uang: 500000</p>
-            <p id="bbt-price">Harga BBITCOIN: 100000</p>
-        </div>
-        <button onclick="gacha()">Main Gacha</button>
-        <button onclick="investInBBITCOIN()">Investasi BBITCOIN</button>
-        <button onclick="sellInvestment()">Jual Investasi</button>
-        <div id="result"></div>
-    </div>
+  <div class="topup-container">
+    <h2>Top Up Saldo</h2>
+    <label for="username">Username</label>
+    <input type="text" id="username" placeholder="Masukkan Username">
 
-    <script src="script.js"></script>
+    <label for="amount">Jumlah Top Up (IDR)</label>
+    <input type="number" id="amount" placeholder="Masukkan Jumlah">
+
+    <button onclick="processTopUp()">Top Up</button>
+
+    <p id="message" style="margin-top: 10px; color: green; font-weight: bold;"></p>
+  </div>
+
+  <script src="topup.js"></script>
 </body>
 </html>
